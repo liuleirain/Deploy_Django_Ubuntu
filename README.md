@@ -204,7 +204,7 @@ After=network.target
 
 [Service]
 User=liuad
-Group=liuad
+Group=www-data
 WorkingDirectory=/home/liuad/ReactDjango_guohuaTools/backend
 ExecStart=/home/liuad/venv/bin/gunicorn \
           --access-logfile - \
@@ -213,7 +213,7 @@ ExecStart=/home/liuad/venv/bin/gunicorn \
           backend.wsgi:application
 
 [Install]
-WantedBy=liuad.target
+WantedBy=multi-user.target
 ```
 
 启动并启用 gunicorn.socket
@@ -254,7 +254,7 @@ server {
 
   location = /favicon.ico { access_log off; log_not_found off; }
   location /static/ {
-    root /home/liuad/ReactDjango_guohuaTools/backend/frontend/build;
+    root /home/liuad/ReactDjango_guohuaTools/backend;
   }
 
   location /media/ {
