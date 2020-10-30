@@ -165,6 +165,21 @@ python manager.py migrate
 python manager.py createsuperuser
 ```
 
+### 收集静态文件
+
+---
+
+进入项目目录
+```shell
+cd 项目目录
+python manage.py collectstatic
+```
+
+对static文件夹添加权限
+```shell
+sudo chmod -R 755 static
+```
+
 ### Gunicorn 配置
 
 ---
